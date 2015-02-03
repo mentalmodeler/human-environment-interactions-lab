@@ -42,7 +42,7 @@
 							</span>
 						</a>
 					</div>
-					<nav class="collapse navbar-collapse bs-navbar-collapse">
+					<nav id="nav-scroll" class="collapse navbar-collapse bs-navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="#home" class="nav-home"><i class="fa-home"></i><span>Home<span></a></li>
 							<li><a href="#people" class="nav-people"><i class="fa-user"></i><span>People<span></a></li>
@@ -59,7 +59,7 @@
 			<div id="content">
 
 				<!-- Home -->
-				<div id="home" class="section" >
+				<div id="home" class="section home" >
 					<div class="section-header-bg">
 						<div class="container">
 							<i class="fa-home"></i><span>Home</span>
@@ -68,7 +68,7 @@
 					<div class="container section-content">
 						<div class="row">
 							<div class="col-sm-6">
-								<p>Welcome to the Human-Environmental Interactions Lab at the University of Massachusetts in Boston!<p/><p>Our group is interested in understanding how human behavior relates to the sustainability of socio-ecological systems. Understanding the complexity of human-environment interactions requires significant collaboration between both scientists from other environmental fields (economists, mathematicians, sociologists, ecologists, agronomists, marine scientists) and the humans that are interacting with the environment (fishers, farmers, land-owners and the general public).</p><p><img class="feature width50" src="img/img_1.jpg" alt="human-environmental interaction scenario 1" ><img class="feature width50" src="img/img_4.jpg" alt="human-environmental interaction scenario 4" ></p><p>We think that it is this collaboration that makes environmental research interesting and will ultimately help us better understand the nature of current environmental problems and help us create more sustainable solutions for the future.</p>
+								<p>Welcome to the Human-Environment Interactions Lab at the University of Massachusetts in Boston!<p/><p>Our group is interested in understanding how human behavior relates to the sustainability of socio-ecological systems. Understanding the complexity of human-environment interactions requires significant collaboration between both scientists from other environmental fields (economists, mathematicians, sociologists, ecologists, agronomists, marine scientists) and the humans that are interacting with the environment (fishers, farmers, land-owners and the general public).</p><p><img class="feature width50" src="img/img_1.jpg" alt="human-environment interaction scenario 1" ><img class="feature width50" src="img/img_4.jpg" alt="human-environment interaction scenario 4" ></p><p>We think that it is this collaboration that makes environmental research interesting and will ultimately help us better understand the nature of current environmental problems and help us create more sustainable solutions for the future.</p>
 							</div>
 							<div class="col-sm-5 col-sm-offset-1 well recent-news">
 								<div class="well-header">Recent News</div>
@@ -86,7 +86,7 @@
 				</div>
 
 				<!-- People -->
-				<div id="people" class="section" >
+				<div id="people" class="section people" >
 					<div class="section-header-bg">
 						<div class="container">
 							<i class="fa-user"></i><span>People</span>
@@ -222,7 +222,7 @@
 				</div>
 
 				<!-- Publications -->
-				<div id="publications" class="section" >
+				<div id="publications" class="section publications" >
 					<div class="section-header-bg">
 						<div class="container">
 							<i class="fa-book"></i><span>Publications</span>
@@ -510,7 +510,7 @@
 				</div>
 
 				<!-- Research -->
-				<div id="research" class="section" >
+				<div id="research" class="section research" >
 					<div class="section-header-bg">
 						<div class="container">
 							<i class="fa-search"></i><span>Research</span>
@@ -519,7 +519,7 @@
 					<div class="container section-content">
 						<div class="row" style="padding-bottom:40px;">
 							<div class="col-sm-6">
-								<p>Our research concentrates on understanding how individuals and groups make decisions about complex social-ecological systems with a focus on how values, attitudes, beliefs or local conditions influence human behavior. It is always our goal to link these data to other datasets (although not always possible!) so that we can explain environmental or social change.</p><p><img class="feature width50" src="img/img_3.jpg" alt="human-environmental interaction scenario 2"><img class="feature width50" src="img/img_2.jpg" alt="human-environmental interaction scenario 3"></p>
+								<p>Our research concentrates on understanding how individuals and groups make decisions about complex social-ecological systems with a focus on how values, attitudes, beliefs or local conditions influence human behavior. It is always our goal to link these data to other datasets (although not always possible!) so that we can explain environmental or social change.</p><p><img class="feature width50" src="img/img_3.jpg" alt="human-environment interaction scenario 2"><img class="feature width50" src="img/img_2.jpg" alt="human-environment interaction scenario 3"></p>
 							</div>
 							<div class="col-sm-6">
 								 <p>To understand the various ways in which humans' interact with their environment, we use several social science (e.g. interviews, surveys, focus groups), participatory modeling (e.g. fuzzy-logic cognitive mapping, agent-based models) and natural science (e.g. watershed modeling, agricultural measurements) methods. In addition, we are currently developing new frameworks and software tools to make this type of interdisciplinary research more commonplace in the future.</p><p>This work draws from a range of disciplines (e.g., cognitive psychology, systems sciences, planning, ecology, and computer science) and has been supported by NSF, NOAA, USEPA, BLM, USDA, the Leibniz Institute (Germany) and the Australian Academy of Sciences.</p>
@@ -673,7 +673,7 @@
 				</div>
 
 				<!-- Teaching -->
-				<div id="teaching" class="section" >
+				<div id="teaching" class="section teaching" >
 					<div class="section-header-bg">
 						<div class="container">
 							<i class="fa-lightbulb-o"></i><span>Teaching</span>
@@ -701,7 +701,7 @@
 				</div>
 
 				<!-- Software -->
-				<div id="software" class="section" >
+				<div id="software" class="section software" >
 					<div class="section-header-bg">
 						<div class="container">
 							<i class="fa-desktop"></i><span>Software</span>
@@ -730,6 +730,46 @@
 			</div>
 			
 		</div>
+
+		<!-- sticky section header bg -->
+		<div id="stickySectionHeader">	
+			<div class="section-header-bg fixed-position">
+				<div class="container home">
+					<i class="fa-home"></i><span>Home</span>
+				</div>
+				<div class="container people">
+					<i class="fa-user"></i><span>People</span>
+				</div>
+				<div class="container publications">	
+					<i class="fa-book"></i><span>Publications</span>
+				</div>
+				<div class="container research">
+					<i class="fa-search"></i><span>Research</span>
+				</div>
+				<div class="container teaching">	
+					<i class="fa-lightbulb-o"></i><span>Teaching</span>
+				</div>
+				<div class="container software">	
+					<i class="fa-desktop"></i><span>Software</span>
+				</div>
+			</div>
+		</div>
+		<!-- <div id="stickySectionHeader">	
+			<div class="section-header-bg fixed-position">
+				<div class="container">
+					<span class="home"><i class="fa-home"></i><span>Home</span></span>
+					<span class="people"><i class="fa-user"></i><span>People</span></span>
+					<span class="publications"><i class="fa-book"></i>
+						<span>Publications</span>
+					</span>
+					<span class="research"><i class="fa-search"></i><span>Research</span></span>
+					<span class="teaching"><i class="fa-lightbulb-o"></i><span>Teaching</span></span>
+					<span class="software"><i class="fa-desktop"></i><span>Software</span></span>
+				</div>
+			</div>
+		</div>
+		-->
+
 	</body>
 	<script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>

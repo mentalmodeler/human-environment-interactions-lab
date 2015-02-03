@@ -629,7 +629,7 @@ ul.nav.navbar-nav {
 }
 /* line 119, ../sass/_nav.scss */
 .nav-home.selected, .nav-home:hover, .nav-home:active {
-  color: #a5c825;
+  color: #a5c825 !important;
 }
 
 /* line 124, ../sass/_nav.scss */
@@ -678,6 +678,100 @@ ul.nav.navbar-nav {
   color: #3498db !important;
 }
 
+/* line 158, ../sass/_nav.scss */
+nav li.active i {
+  color: #fff;
+}
+/* line 161, ../sass/_nav.scss */
+nav li.active .nav-home {
+  color: #a5c825 !important;
+}
+/* line 163, ../sass/_nav.scss */
+nav li.active .nav-home.selected, nav li.active .nav-home:hover, nav li.active .nav-home:active {
+  color: #a5c825 !important;
+}
+/* line 167, ../sass/_nav.scss */
+nav li.active .nav-people {
+  color: #bf00bf !important;
+}
+/* line 169, ../sass/_nav.scss */
+nav li.active .nav-people.selected, nav li.active .nav-people:hover, nav li.active .nav-people:active {
+  color: #bf00bf !important;
+}
+/* line 173, ../sass/_nav.scss */
+nav li.active .nav-publications {
+  color: #bf0f00 !important;
+}
+/* line 175, ../sass/_nav.scss */
+nav li.active .nav-publications.selected, nav li.active .nav-publications:hover, nav li.active .nav-publications:active {
+  color: #bf0f00 !important;
+}
+/* line 179, ../sass/_nav.scss */
+nav li.active .nav-research {
+  color: #cccc27 !important;
+}
+/* line 181, ../sass/_nav.scss */
+nav li.active .nav-research.selected, nav li.active .nav-research:hover, nav li.active .nav-research:active {
+  color: #cccc27 !important;
+}
+/* line 185, ../sass/_nav.scss */
+nav li.active .nav-teaching {
+  color: #a66f03 !important;
+}
+/* line 187, ../sass/_nav.scss */
+nav li.active .nav-teaching.selected, nav li.active .nav-teaching:hover, nav li.active .nav-teaching:active {
+  color: #a66f03 !important;
+}
+/* line 191, ../sass/_nav.scss */
+nav li.active .nav-software {
+  color: #3498db !important;
+}
+/* line 193, ../sass/_nav.scss */
+nav li.active .nav-software.selected, nav li.active .nav-software:hover, nav li.active .nav-software:active {
+  color: #3498db !important;
+}
+
+/*
+.nav-home {
+	i { color: $green; }
+	&.selected, .active, &:hover, &:active {
+		color: $green;
+	}
+}
+.nav-people {
+	i { color: $purple; }
+	&.selected, .active, &:hover, &:active {
+		color: $purple !important;
+	}
+}
+.nav-publications {
+	i { color: $red; }
+	&.selected, .active, &:hover, &:active {
+		color: $red !important;
+	}
+}
+.nav-research {
+	i { color: $yellow; }
+	&.selected, .active, &:hover, &:active {
+		color: $yellow !important;
+	}
+}
+.nav-teaching {
+	i {
+		color: $brown;
+		font-size: 16px !important;
+	}
+	&.selected, .active, &:hover, &:active {
+		color: $brown !important;
+	}
+}
+.nav-software {
+	i { color: $blue; }
+	&.selected, .active, &:hover, &:active {
+		color: $blue !important;
+	}
+}
+*/
 /* line 3, ../sass/_section.scss */
 .section {
   width: 100%;
@@ -706,11 +800,11 @@ a {
   background-color: #a5c825;
 }
 /* line 25, ../sass/_section.scss */
-.section-header-bg > .container {
+.section-header-bg > .container, .section-header-bg .container > span {
   height: 100%;
 }
 /* line 27, ../sass/_section.scss */
-.section-header-bg > .container > i {
+.section-header-bg > .container > i, .section-header-bg .container > span > i {
   font-family: 'FontAwesome';
   font-style: normal;
   color: rgba(0, 0, 0, 0.2);
@@ -720,31 +814,31 @@ a {
   vertical-align: middle;
 }
 /* line 35, ../sass/_section.scss */
-.section-header-bg > .container > i.fa-home {
+.section-header-bg > .container > i.fa-home, .section-header-bg .container > span > i.fa-home {
   font-size: 27px;
 }
 /* line 36, ../sass/_section.scss */
-.section-header-bg > .container > i.fa-user {
+.section-header-bg > .container > i.fa-user, .section-header-bg .container > span > i.fa-user {
   font-size: 25px;
 }
 /* line 37, ../sass/_section.scss */
-.section-header-bg > .container > i.fa-book {
+.section-header-bg > .container > i.fa-book, .section-header-bg .container > span > i.fa-book {
   font-size: 25px;
 }
 /* line 38, ../sass/_section.scss */
-.section-header-bg > .container > i.fa-lightbulb-o {
+.section-header-bg > .container > i.fa-lightbulb-o, .section-header-bg .container > span > i.fa-lightbulb-o {
   font-size: 25px;
   position: relative;
   top: 0px;
 }
 /* line 43, ../sass/_section.scss */
-.section-header-bg > .container > i.fa-desktop {
+.section-header-bg > .container > i.fa-desktop, .section-header-bg .container > span > i.fa-desktop {
   font-size: 21px;
   position: relative;
   top: 2px;
 }
 /* line 49, ../sass/_section.scss */
-.section-header-bg > .container > span {
+.section-header-bg > .container > span, .section-header-bg > .container > span span, .section-header-bg .container > span > span, .section-header-bg .container > span > span span {
   font-weight: 600;
   color: #FFF;
   font-size: 26px;
@@ -755,7 +849,6 @@ a {
 /* line 59, ../sass/_section.scss */
 .section-header-bg.fixed-position {
   position: fixed;
-  z-index: 11;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
@@ -793,72 +886,72 @@ img.feature.width50:first-child {
 }
 
 /* line 91, ../sass/_section.scss */
-#home {
-  z-index: 5;
+.home {
+  z-index: 9;
 }
 /* line 92, ../sass/_section.scss */
-#home .section-header-bg {
+.home .section-header-bg {
   background-color: #a5c825;
 }
 /* line 93, ../sass/_section.scss */
-#home a {
+.home a {
   color: #7a941b;
 }
 
 /* line 96, ../sass/_section.scss */
-#people {
-  z-index: 6;
+.people {
+  z-index: 19;
 }
 /* line 97, ../sass/_section.scss */
-#people .section-header-bg {
+.people .section-header-bg {
   background-color: #bf00bf;
 }
 /* line 98, ../sass/_section.scss */
-#people a {
+.people a {
   color: #bf00bf;
 }
 
 /* line 101, ../sass/_section.scss */
-#publications {
-  z-index: 7;
+.publications {
+  z-index: 29;
 }
 /* line 102, ../sass/_section.scss */
-#publications .section-header-bg {
+.publications .section-header-bg {
   background-color: #bf0f00;
 }
 /* line 103, ../sass/_section.scss */
-#publications a {
+.publications a {
   color: #bf0f00;
 }
 
 /* line 106, ../sass/_section.scss */
-#research {
-  z-index: 8;
+.research {
+  z-index: 39;
 }
 /* line 107, ../sass/_section.scss */
-#research .section-header-bg {
+.research .section-header-bg {
   background-color: #cccc27;
 }
 
 /* line 110, ../sass/_section.scss */
-#teaching {
-  z-index: 9;
+.teaching {
+  z-index: 49;
 }
 /* line 111, ../sass/_section.scss */
-#teaching .section-header-bg {
+.teaching .section-header-bg {
   background-color: #a66f03;
 }
 
 /* line 114, ../sass/_section.scss */
-#software {
-  z-index: 10;
+.software {
+  z-index: 59;
 }
 /* line 115, ../sass/_section.scss */
-#software .section-header-bg {
+.software .section-header-bg {
   background-color: #3498db;
 }
 /* line 116, ../sass/_section.scss */
-#software a {
+.software a {
   color: #3498db;
 }
 

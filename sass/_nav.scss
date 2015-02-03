@@ -117,7 +117,7 @@ ul.nav.navbar-nav {
 .nav-home {
 	i { color: $green; }
 	&.selected, &:hover, &:active {
-		color: $green;
+		color: $green !important;
 	}
 }
 .nav-people {
@@ -153,3 +153,87 @@ ul.nav.navbar-nav {
 		color: $blue !important;
 	}
 }
+
+nav li.active {
+	i {
+		color: #fff;
+	}
+	.nav-home {
+		color: $green !important;
+		&.selected, &:hover, &:active {
+			color: $green !important;
+		}
+	}
+	.nav-people {
+		color: $purple !important;
+		&.selected, &:hover, &:active {
+			color: $purple !important;
+		}
+	}
+	.nav-publications {
+		color: $red !important;
+		&.selected, &:hover, &:active {
+			color: $red !important;
+		}
+	}
+	.nav-research {
+		color: $yellow !important;
+		&.selected, &:hover, &:active {
+			color: $yellow !important;
+		}
+	}
+	.nav-teaching {
+		color: $brown !important;
+		&.selected, &:hover, &:active {
+			color: $brown !important;
+		}
+	}
+	.nav-software {
+		color: $blue !important;
+		&.selected, &:hover, &:active {
+			color: $blue !important;
+		}
+	}
+}
+
+/*
+.nav-home {
+	i { color: $green; }
+	&.selected, .active, &:hover, &:active {
+		color: $green;
+	}
+}
+.nav-people {
+	i { color: $purple; }
+	&.selected, .active, &:hover, &:active {
+		color: $purple !important;
+	}
+}
+.nav-publications {
+	i { color: $red; }
+	&.selected, .active, &:hover, &:active {
+		color: $red !important;
+	}
+}
+.nav-research {
+	i { color: $yellow; }
+	&.selected, .active, &:hover, &:active {
+		color: $yellow !important;
+	}
+}
+.nav-teaching {
+	i {
+		color: $brown;
+		font-size: 16px !important;
+	}
+	&.selected, .active, &:hover, &:active {
+		color: $brown !important;
+	}
+}
+.nav-software {
+	i { color: $blue; }
+	&.selected, .active, &:hover, &:active {
+		color: $blue !important;
+	}
+}
+*/

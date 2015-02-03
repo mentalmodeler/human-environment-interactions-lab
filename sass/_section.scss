@@ -22,7 +22,7 @@ a {
     background-image: url("../img/pattern_small.png");
     background-color: $green;
     //margin-bottom: $section-top-bottom-padding;
-    > .container {
+    > .container, .container > span {
         height: 100%;
         > i {
             font-family: 'FontAwesome';
@@ -46,7 +46,7 @@ a {
                 top: 2px; 
             }
         }
-        > span {
+        > span, > span span {
             font-weight: 600;
             color: #FFF;
             font-size: 26px;
@@ -58,7 +58,7 @@ a {
 
     &.fixed-position {
         position:fixed;
-        z-index: 11;
+        //z-index: 11;
         -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
         box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);        
     }
@@ -88,33 +88,33 @@ img.feature {
         padding-top: #{65px + $section-top-bottom-padding};
     }
 }
-#home {
+.home {
     .section-header-bg { background-color: $green; }
     a { color: $green-dark; }
-    z-index:5;
-}
-#people {
-    .section-header-bg { background-color: $purple; }
-    a { color: $purple; }
-    z-index:6;
-}
-#publications {
-    .section-header-bg  { background-color: $red; }
-    a { color: $red; }
-    z-index:7;
-}
-#research {
-    .section-header-bg  { background-color: $yellow; }
-    z-index:8;
-}
-#teaching { 
-    .section-header-bg  { background-color: $brown; }
     z-index:9;
 }
-#software {
+.people {
+    .section-header-bg { background-color: $purple; }
+    a { color: $purple; }
+    z-index:19;
+}
+.publications {
+    .section-header-bg  { background-color: $red; }
+    a { color: $red; }
+    z-index:29;
+}
+.research {
+    .section-header-bg  { background-color: $yellow; }
+    z-index:39;
+}
+.teaching { 
+    .section-header-bg  { background-color: $brown; }
+    z-index:49;
+}
+.software {
     .section-header-bg  { background-color: $blue; }
     a { color: $blue; }
-    z-index:10;
+    z-index:59;
 }
 
 .green { color: $green !important; }

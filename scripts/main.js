@@ -1,4 +1,5 @@
 var app = app || {};
+app.sections = ['home', 'people', 'publications', 'research', 'teaching', 'software'];
 
 
 app.updateHeaderHeight = function() {
@@ -6,6 +7,8 @@ app.updateHeaderHeight = function() {
 }
 
 app.setActiveLink = function( href, from ) {
+    return;
+
     //console.log('setActiveLink, href:',href,', from:',from);
     if (typeof href === 'undefined') {
         href = '#home';
@@ -60,6 +63,7 @@ app.setBrandingWidth = function() {
     $('a.navbar-brand').css('max-width', brandWidth );
 }
 
+
 app.updateHeaderBgPos = function() {
     var headerHeight = app.$header.height();
     $('.section-header-bg.fixed-position').css('top', headerHeight );
@@ -67,6 +71,7 @@ app.updateHeaderBgPos = function() {
 
 app.updateBodyPadding = function() {
     var headerHeight = app.$header.height();
+    app.bodyPaddingTop = headerHeight;
     $('body').css( 'padding-top', headerHeight );
 }
 
@@ -86,6 +91,7 @@ app.getSectionFromScrollPosition = function(){
      //console.log('after, fixedSection:',fixedSection);
      var fSection = fixedSection.substr(1);
      var $bgs = $('#content').find('.section-header-bg');
+     /*
      $bgs.each( function() {
         var $sectionHeader = $(this);
         var $section = $sectionHeader.closest('.section')
@@ -102,6 +108,7 @@ app.getSectionFromScrollPosition = function(){
             $sectionContent.removeClass('fixed-position-header');
         }
      });
+    */
      this.setActiveLink( fixedSection, 'getSectionFromScrollPosition' );
     
      if (offset <= 0) {
@@ -127,7 +134,7 @@ app.scrollToSection = function( href ) {
             scrollTop: scrollTop
         }, 500, (function(app, scrollTop){ return function() {
             app.setHash(href);
-            app.getSectionFromScrollPosition();
+            //app.getSectionFromScrollPosition();
             //app.$root.scrollTop( scrollTop );
         };
         })(app, scrollTop) );
@@ -136,6 +143,35 @@ app.scrollToSection = function( href ) {
     else {
         return true;
     }
+}
+
+app.initScrollSpy = function() {
+    var navSelector = '#nav-scroll'
+    var $body = $( 'body' );
+    $body.css( 'position', 'relative' );
+    $body.attr( { 'data-spy': 'scroll', 'data-target': navSelector } );
+    $body.scrollspy( { target: navSelector, offset: app.bodyPaddingTop} );
+    
+    $(navSelector).on('activate.bs.scrollspy', function ( e ) {
+        //var $currentItem = $('.nav li.active > a > span');
+        app.onSectionChange( $( e.target ) );
+        
+    });
+}
+
+app.onSectionChange = function ( $li ) {
+    var hash = $li.find( 'a' ).attr( 'href' ); //.substring( 1 );
+    var section = hash.substring( 1 );
+    app.setHash( hash );
+    // update header
+    var $stickyHeader = $('#stickySectionHeader');
+    $stickyHeader.removeClass().addClass( section );
+    $stickyHeader.find('.container').hide();
+    $stickyHeader.find('.container.' + section ).show();
+    var zIdx = (app.sections.indexOf( hash ) + 1) * 10;
+    console.log('app.sectionNames:',app.sections,', zIdx:',zIdx);
+    $stickyHeader.find('.section-header-bg').css('z-index', zIdx);
+    console.log('onSectionChange, section:',section );
 }
 
 $( document ).ready( function() {
@@ -152,11 +188,12 @@ $( document ).ready( function() {
         $('nav.navbar-collapse').removeClass('in');
         return app.scrollToSection( href );
     });    
-
     // add scroll listening
+    /*
     $(window).scroll( function() {
         app.getSectionFromScrollPosition();
     })
+    */
     // add resize listening
     $(window).resize( function() {
         app.updateBodyPadding();
@@ -168,5 +205,7 @@ $( document ).ready( function() {
     app.updateBodyPadding();
     app.updateHeaderBgPos();
     app.setBrandingWidth();
-    app.scrollToSection( window.location.hash );      
+    //app.scrollToSection( window.location.hash );
+
+    app.initScrollSpy();
 });
