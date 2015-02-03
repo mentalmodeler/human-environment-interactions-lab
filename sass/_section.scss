@@ -1,0 +1,280 @@
+$section-header-height: 65px;
+$section-top-bottom-padding: 40px;
+.section {
+    width: 100%;
+    /*background-color: #f2f2f2;*/
+    background: #FFFFFF; /* Old browsers */
+    padding-bottom: $section-top-bottom-padding;
+    /*
+    background-image: url("../img/pattern_small.png");
+    &:nth-child(even) {
+        background: #f2f2f2;
+    }
+    */
+}
+a {
+    word-break: break-word;
+}
+.section-header-bg {
+    //text-transform: uppercase;
+    width: 100%;
+    height: $section-header-height;
+    background-image: url("../img/pattern_small.png");
+    background-color: $green;
+    //margin-bottom: $section-top-bottom-padding;
+    > .container {
+        height: 100%;
+        > i {
+            font-family: 'FontAwesome';
+            font-style: normal;
+            color: rgba(0,0,0,0.2);
+            font-size: 23px;
+            margin-right: 10px;
+            line-height: $section-header-height;
+            vertical-align: middle;
+            &.fa-home { font-size: 27px; }
+            &.fa-user { font-size: 25px; }
+            &.fa-book { font-size: 25px; }
+            &.fa-lightbulb-o { 
+                font-size: 25px;
+                position: relative;
+                top: 0px; 
+            }
+            &.fa-desktop { 
+                font-size: 21px;
+                position: relative;
+                top: 2px; 
+            }
+        }
+        > span {
+            font-weight: 600;
+            color: #FFF;
+            font-size: 26px;
+            letter-spacing: -2px;
+            line-height: $section-header-height;
+            vertical-align: middle;
+        }
+    }
+
+    &.fixed-position {
+        position:fixed;
+        z-index: 11;
+        -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);        
+    }
+}
+
+img.feature {
+    max-width:100%;
+    height:auto;
+    padding: 4px;
+    border: solid 1px #666;
+    border-radius: 8px;
+    &.width50 {
+        &:first-child {
+            margin-right:15px;
+        }
+        max-width: calc(50% - 10px);
+    }
+}
+
+.section {
+    position: relative;
+}
+.section-content {
+    padding-top: $section-top-bottom-padding;
+    &.fixed-position-header {
+        position: relative;
+        padding-top: #{65px + $section-top-bottom-padding};
+    }
+}
+#home {
+    .section-header-bg { background-color: $green; }
+    a { color: $green-dark; }
+    z-index:5;
+}
+#people {
+    .section-header-bg { background-color: $purple; }
+    a { color: $purple; }
+    z-index:6;
+}
+#publications {
+    .section-header-bg  { background-color: $red; }
+    a { color: $red; }
+    z-index:7;
+}
+#research {
+    .section-header-bg  { background-color: $yellow; }
+    z-index:8;
+}
+#teaching { 
+    .section-header-bg  { background-color: $brown; }
+    z-index:9;
+}
+#software {
+    .section-header-bg  { background-color: $blue; }
+    a { color: $blue; }
+    z-index:10;
+}
+
+.green { color: $green !important; }
+.purple { color: $purple !important; }
+.green { color: $green !important; }
+.red { color: $red !important; }
+.yellow { color: $yellow-dark !important; }
+.brown { color: $brown !important; }
+.blue { color: $blue !important; }
+
+@mixin styledName ( $font-size, $sub-font-size ) {
+    font-weight: 300;
+    font-size: $font-size;
+    vertical-align: text-top;
+    line-height: 30px;
+    > span {
+        font-weight: 600;
+        font-size: $sub-font-size;
+        color: #aaa;
+        margin-left: 10px;
+        letter-spacing: -1px;
+    }
+}
+
+.divider {
+    border-bottom: solid 1px #666;
+    margin-bottom: 40px;
+    > div {
+        @include styledName(22px, 22px);
+    }
+}
+.row.header {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    > div {
+        @include styledName(24px, 24px);
+        > span {
+            margin-left: 0;
+        }
+    }   
+}
+.profile {
+    margin-bottom: 50px;
+    .image {
+        text-align: right;
+        > img {
+            padding: 4px;
+            border: solid 1px #666;
+            border-radius: 8px;
+            max-width: 95%;
+        }
+    }
+    .name { 
+        @include styledName(24px, 22px);
+        > span:first-child {
+            margin-left: 0;
+        }
+    }
+}
+
+#publications {
+    .publ-row {
+        margin-bottom: 30px;
+    }
+    .publ {
+        ul {
+            padding: 0;
+            padding-left: 15px;
+            list-style-type: none;
+        }
+        li {
+            &:before {
+                font-family: 'FontAwesome';
+                content: '\f02d';
+                margin:0 5px 0 -15px;
+                color: $red; //#666;
+                font-size: 16px;
+            }
+            margin-bottom: 20px;
+        }
+    }  
+}
+a i {
+    font-family: 'FontAwesome';
+    font-style: normal;
+}
+.funding {
+    margin-bottom: 20px;
+    .funding-date {
+        font-weight:300;
+        font-size: 20px;
+        text-align: right;
+    }
+    .name {
+        font-weight:600;
+        font-size: 18px;
+        color: $yellow-dark;//#999;
+    }
+}
+#teaching {
+    .course {
+        &:first-child {
+            margin-top: 20px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+        font-weight: 300;
+        font-size: 16px;
+        > span {
+            font-weight: 600;
+            color: $brown;//#999;
+        }
+    }
+}
+#software {
+    img {
+        max-width: 100%;
+    }
+    .title {
+        margin-bottom: 20px;
+        text-align:center;
+        font-weight:300;
+        font-size: 20px;
+        letter-spacing: -1px;
+        > span {
+            font-weight: 600;
+            color: $blue; //#aaa;
+            margin-right: 7px;
+            font-size: 22px;
+        }
+    }
+    div[class^="col-sm-"] {
+        margin-bottom: 15px;
+    }
+}
+.recent-news {
+    ul {
+        padding: 0;
+        padding-left: 15px;
+        list-style-type: none;
+    }
+    li {
+        &:before {
+            font-family: 'FontAwesome';
+            content: '\f067';
+            margin:0 5px 0 -15px;
+            color: #999;
+            font-size: 10px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}
+.well-header {
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: solid 1px #999;
+    color: #666;
+    margin-bottom: 12px;
+    padding-bottom: 4px;
+}

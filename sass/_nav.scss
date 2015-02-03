@@ -1,0 +1,155 @@
+.main-nav {
+  background-color: #000;
+  a {
+  	color: #fff;
+  }
+}
+nav a {
+	cursor: pointer;
+}
+nav.navbar-collapse {
+	.navbar-nav >li:not(:last-child) {
+		margin-right:0px;
+		a {
+			padding-right: 26px;
+		}
+	}
+	.navbar-nav >li > a {
+		margin: 17px 0;
+		padding: 0 5px 0 7px;
+		//border-radius: 0 10px;
+		background-color: initial !important;
+		border-left: 1px solid #777;
+		outline: none;
+		font-weight: 600;
+		//text-transform: uppercase;
+
+		&.selected, &:hover, &:active {
+			i { 
+				color: #fff;//rgba(255,255,255,0.5); 
+			}
+		}
+
+		&:focus {
+			//border-color: rgba(0,0,0,0) !important;
+		}
+		i {
+			display:block;
+			margin-bottom: 2px;
+			font-size: 14px;
+			line-height: 12px;
+			position: relative;
+			top: 2px;
+		}
+		span {
+			font-size: 14px;
+			line-height: 14px;
+			letter-spacing: -1px;
+			vertical-align: bottom;
+		}
+	}
+}
+
+.navbar-brand {
+	height: 100%;
+}
+header {
+	margin-bottom: 0;
+}
+
+header nav a[href] {
+	//background-image: url("../img/pattern_small.png");
+}
+ul.nav.navbar-nav {
+	position:relative;
+}
+.navbar-brand {
+	height: 100%;
+	.text {
+		.stacked {
+			display: inline-block;
+			white-space: nowrap;	
+		}
+		.top {
+			display:block;
+			margin-right:0px;
+			> span {
+				letter-spacing: -1px;
+			}
+			font-weight: 700;
+			margin-bottom: 1px;
+			font-size:20px; // 16px;
+		}
+		.human {
+			color:  #FFFF96; //$yellow; // #ffffc9;
+		}
+		.envir {
+			color: $green; // #DDF291; //$green;
+		}
+		.bottom {
+			letter-spacing: -1px;
+			font-weight: 400;
+			font-size: 24px;
+			text-transform: uppercase;
+			line-height: 10px;
+			color: $blue; //#CCEBFF; //#A5D3DF;
+		}
+		.fa-gears {
+			font-size: 15px;
+			color: #ccc;
+			margin-left: 1px;
+			position: relative;
+			top: -1px;
+		}
+		.lab {
+			color: #ccc;
+			font-size:23px;
+			position:relative;
+			font-weight: 300;
+			left: -4px;
+			letter-spacing: -1px;
+			text-transform: lowercase;
+			
+		}
+	}
+}
+
+.nav-home {
+	i { color: $green; }
+	&.selected, &:hover, &:active {
+		color: $green;
+	}
+}
+.nav-people {
+	i { color: $purple; }
+	&.selected, &:hover, &:active {
+		color: $purple !important;
+	}
+}
+.nav-publications {
+	i { color: $red; }
+	&.selected, &:hover, &:active {
+		color: $red !important;
+	}
+}
+.nav-research {
+	i { color: $yellow; }
+	&.selected, &:hover, &:active {
+		color: $yellow !important;
+	}
+}
+.nav-teaching {
+	i {
+		color: $brown;
+		font-size: 16px !important;
+	}
+	&.selected, &:hover, &:active {
+		color: $brown !important;
+	}
+}
+.nav-software {
+	i { color: $blue; }
+	&.selected, &:hover, &:active {
+		color: $blue !important;
+	}
+}

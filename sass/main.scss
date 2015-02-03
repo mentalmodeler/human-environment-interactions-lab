@@ -1,0 +1,83 @@
+@import "normalize";
+@import "settings";
+@import "bootstrap-overrides";
+@import "nav";
+@import "section";
+
+body {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	padding-top: 50px;
+}
+
+@media (min-width: 769px) {
+	.row > .col-sm-12 {
+		margin-left: -15px;
+	}
+}
+@media (max-width: 768px) {
+    .profile .image, .funding .funding-date {
+        text-align:left;
+    }
+    .navbar-nav {
+		margin: 0px -15px;
+	}
+	.recent-news {
+		margin-top: 20px;
+	}
+    nav.navbar-collapse .navbar-nav > li > a {
+		margin: 0px;
+		//border-color: rgba(0,0,0,0) !important;
+		padding: 15px 10px;
+		border-left: none;
+		border-right: none;
+		border-top: 1px solid #333;
+		border-bottom: none; 
+		i {
+			display:inline-block;
+			margin-right:7px;
+			margin-bottom: 0px;
+			font-size: 14px;
+			line-height: 20px;
+			position: relative;
+			top: 0px;
+			vertical-align: middle;
+		}
+		span {
+			line-height: 20px;
+			vertical-align: middle;
+		}
+		&.selected, &:hover, &:active {
+			color: #fff !important;
+		}
+		&.nav-home {
+			&.selected, &:hover, &:active {
+				background-color: $green !important;
+			}
+		}
+		&.nav-people {
+			&.selected, &:hover, &:active {
+				background-color: $purple !important;
+			}
+		}
+		&.nav-publications {
+			&.selected, &:hover, &:active {
+				background-color: $red !important;
+			}
+		}
+		&.nav-research {
+			&.selected, &:hover, &:active {
+				background-color: $yellow !important;
+			}
+		}
+		&.nav-teaching {
+			&.selected, &:hover, &:active {
+				background-color: $brown !important;
+			}
+		}
+		&.nav-software {
+			&.selected, &:hover, &:active {
+				background-color: $blue !important;
+			}
+		}
+	}
+}
