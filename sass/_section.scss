@@ -15,6 +15,11 @@ $section-top-bottom-padding: 40px;
 a {
     word-break: break-word;
 }
+#stickySectionHeader {
+    .section-header-bg {
+        z-index: 10;
+    }
+}
 .section-header-bg {
     //text-transform: uppercase;
     width: 100%;
