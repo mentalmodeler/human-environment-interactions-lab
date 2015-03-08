@@ -1129,31 +1129,32 @@ a i {
 body {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding-top: 50px;
+  position: relative;
 }
 
 @media (min-width: 769px) {
-  /* line 13, ../sass/main.scss */
+  /* line 14, ../sass/main.scss */
   .row > .col-sm-12 {
     margin-left: -15px;
   }
 }
 @media (max-width: 768px) {
-  /* line 18, ../sass/main.scss */
+  /* line 19, ../sass/main.scss */
   .profile .image, .funding .funding-date {
     text-align: left;
   }
 
-  /* line 21, ../sass/main.scss */
+  /* line 22, ../sass/main.scss */
   .navbar-nav {
     margin: 0px -15px;
   }
 
-  /* line 24, ../sass/main.scss */
+  /* line 25, ../sass/main.scss */
   .recent-news {
     margin-top: 20px;
   }
 
-  /* line 27, ../sass/main.scss */
+  /* line 28, ../sass/main.scss */
   nav.navbar-collapse .navbar-nav > li > a {
     margin: 0px;
     padding: 15px 10px;
@@ -1162,7 +1163,7 @@ body {
     border-top: 1px solid #333;
     border-bottom: none;
   }
-  /* line 35, ../sass/main.scss */
+  /* line 36, ../sass/main.scss */
   nav.navbar-collapse .navbar-nav > li > a i {
     display: inline-block;
     margin-right: 7px;
@@ -1173,36 +1174,36 @@ body {
     top: 0px;
     vertical-align: middle;
   }
-  /* line 45, ../sass/main.scss */
+  /* line 46, ../sass/main.scss */
   nav.navbar-collapse .navbar-nav > li > a span {
     line-height: 20px;
     vertical-align: middle;
   }
-  /* line 49, ../sass/main.scss */
+  /* line 50, ../sass/main.scss */
   nav.navbar-collapse .navbar-nav > li > a.selected, nav.navbar-collapse .navbar-nav > li > a:hover, nav.navbar-collapse .navbar-nav > li > a:active {
     color: #fff !important;
   }
-  /* line 53, ../sass/main.scss */
+  /* line 54, ../sass/main.scss */
   nav.navbar-collapse .navbar-nav > li > a.nav-home.selected, nav.navbar-collapse .navbar-nav > li > a.nav-home:hover, nav.navbar-collapse .navbar-nav > li > a.nav-home:active {
     background-color: #a5c825 !important;
   }
-  /* line 58, ../sass/main.scss */
+  /* line 59, ../sass/main.scss */
   nav.navbar-collapse .navbar-nav > li > a.nav-people.selected, nav.navbar-collapse .navbar-nav > li > a.nav-people:hover, nav.navbar-collapse .navbar-nav > li > a.nav-people:active {
     background-color: #bf00bf !important;
   }
-  /* line 63, ../sass/main.scss */
+  /* line 64, ../sass/main.scss */
   nav.navbar-collapse .navbar-nav > li > a.nav-publications.selected, nav.navbar-collapse .navbar-nav > li > a.nav-publications:hover, nav.navbar-collapse .navbar-nav > li > a.nav-publications:active {
     background-color: #bf0f00 !important;
   }
-  /* line 68, ../sass/main.scss */
+  /* line 69, ../sass/main.scss */
   nav.navbar-collapse .navbar-nav > li > a.nav-research.selected, nav.navbar-collapse .navbar-nav > li > a.nav-research:hover, nav.navbar-collapse .navbar-nav > li > a.nav-research:active {
     background-color: #cccc27 !important;
   }
-  /* line 73, ../sass/main.scss */
+  /* line 74, ../sass/main.scss */
   nav.navbar-collapse .navbar-nav > li > a.nav-teaching.selected, nav.navbar-collapse .navbar-nav > li > a.nav-teaching:hover, nav.navbar-collapse .navbar-nav > li > a.nav-teaching:active {
     background-color: #a66f03 !important;
   }
-  /* line 78, ../sass/main.scss */
+  /* line 79, ../sass/main.scss */
   nav.navbar-collapse .navbar-nav > li > a.nav-software.selected, nav.navbar-collapse .navbar-nav > li > a.nav-software:hover, nav.navbar-collapse .navbar-nav > li > a.nav-software:active {
     background-color: #3498db !important;
   }
