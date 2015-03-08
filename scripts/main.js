@@ -53,11 +53,11 @@ app.getSectionFromScrollPosition = function(){
     var fixedSection = ''; //#home';
     var offset = $('body').scrollTop();
     var bodyPaddingTop = app.bodyPaddingTop;
-    console.log('getSectionFromScrollPosition, fixedSection:',fixedSection,', (body).scrollTop():',offset,' bodyPaddingTop:',bodyPaddingTop);
+    app.log('getSectionFromScrollPosition, fixedSection:',fixedSection,', (body).scrollTop():',offset,' bodyPaddingTop:',bodyPaddingTop);
     for (var i=0,l = this.sections.length; i<l; i++) {
         var section = this.sections[i];
         var scrollTop = app.$content.find(section).offset().top - bodyPaddingTop;
-        console.log('       ',section,'scrollTop:',scrollTop);
+        app.log('       ',section,'scrollTop:',scrollTop);
         if ( offset >= scrollTop ) {
             fixedSection = section;
         }
@@ -110,6 +110,7 @@ app.initScrollSpy = function() {
     
     $(navSelector).on('activate.bs.scrollspy', function ( e ) {
         var sectionHash = $( e.target ).find( 'a' ).attr( 'href' )
+        app.log('activate.bs.scrollspy, sectionHash:',sectionHash );
         app.onSectionChange( sectionHash, 'activate.bs.scrollspy' );
     });
 };
@@ -128,11 +129,13 @@ app.onSectionChange = function ( hash, calledFrom ) { // $li ) {
     var zIndex = (app.sections.indexOf( hash ) + 1) * 10;
     app.$stickyHeaderSectionHeaderBg.css('z-index', zIndex );
 };
+
 app.setInitialSection = function() {
     var sectionHash = app.getSectionFromHash();
-    console.log('app.setInitialSection, sectionHash:',sectionHash );
+    app.log('app.setInitialSection, sectionHash:',sectionHash );
     app.scrollToSection( sectionHash, true );    
 };
+
 app.getSectionFromHash = function() {
     var sectionHash = window.location.hash;
     app.log('app.getSectionFromHash, sectionHash:',sectionHash);
