@@ -130,7 +130,7 @@ app.onSectionChange = function ( hash, calledFrom ) { // $li ) {
 };
 app.setInitialSection = function() {
     var sectionHash = app.getSectionFromHash();
-    app.log('app.setInitialSection, sectionHash:',sectionHash );
+    console.log('app.setInitialSection, sectionHash:',sectionHash );
     app.scrollToSection( sectionHash, true );    
 };
 app.getSectionFromHash = function() {
