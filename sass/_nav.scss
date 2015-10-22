@@ -11,17 +11,17 @@ nav.navbar-collapse {
 	.navbar-nav >li:not(:last-child) {
 		margin-right:0px;
 		a {
-			padding-right: 26px;
+			padding-right: 20px;
 		}
 	}
 	.navbar-nav >li > a {
 		margin: 17px 0;
-		padding: 0 5px 0 7px;
+		padding: 0 5px 0 4px;
 		//border-radius: 0 10px;
 		background-color: initial !important;
 		border-left: 1px solid #777;
 		outline: none;
-		font-weight: 600;
+		font-weight: 700;
 		//text-transform: uppercase;
 
 		&.selected, &:hover, &:active {
@@ -33,23 +33,31 @@ nav.navbar-collapse {
 		&:focus {
 			//border-color: rgba(0,0,0,0) !important;
 		}
-		i {
+		span:nth-child(1) {
 			display:block;
 			margin-bottom: 2px;
-			font-size: 14px;
+			font-size: 13px;
 			line-height: 12px;
 			position: relative;
 			top: 2px;
 		}
-		span {
-			font-size: 14px;
-			line-height: 14px;
+		span:nth-child(2) {
+			font-size: 15px;
+			line-height: 15px;
 			letter-spacing: -1px;
 			vertical-align: bottom;
+			text-transform: uppercase;
+			font-weight: 400;
 		}
 	}
 }
-
+@media (max-width: 767px) {
+	nav.navbar-collapse .navbar-nav >li > a  {
+		span:nth-child(1)  {
+			display: inline;
+		}
+	}
+}
 .navbar-brand {
 	height: 100%;
 }
@@ -115,31 +123,31 @@ ul.nav.navbar-nav {
 }
 
 .nav-home {
-	i { color: $green; }
+	span:nth-child(1) { color: $green; }
 	&.selected, &:hover, &:active {
 		color: $green !important;
 	}
 }
 .nav-people {
-	i { color: $purple; }
+	span:nth-child(1) { color: $purple; }
 	&.selected, &:hover, &:active {
 		color: $purple !important;
 	}
 }
 .nav-publications {
-	i { color: $red; }
+	span:nth-child(1) { color: $red; }
 	&.selected, &:hover, &:active {
 		color: $red !important;
 	}
 }
 .nav-research {
-	i { color: $yellow; }
+	span:nth-child(1) { color: $yellow; }
 	&.selected, &:hover, &:active {
 		color: $yellow !important;
 	}
 }
 .nav-teaching {
-	i {
+	span:nth-child(1) {
 		color: $brown;
 		font-size: 16px !important;
 	}
@@ -148,15 +156,15 @@ ul.nav.navbar-nav {
 	}
 }
 .nav-software {
-	i { color: $blue; }
+	span:nth-child(1) { color: $blue; }
 	&.selected, &:hover, &:active {
 		color: $blue !important;
 	}
 }
 
 nav li.active {
-	i {
-		color: #fff;
+	span:nth-child(1) {
+		//color: #fff;
 	}
 	.nav-home {
 		color: $green !important;

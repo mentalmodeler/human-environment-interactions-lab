@@ -33,7 +33,7 @@ body {
 		border-right: none;
 		border-top: 1px solid #333;
 		border-bottom: none; 
-		i {
+		span:nth-child(1) {
 			display:inline-block;
 			margin-right:7px;
 			margin-bottom: 0px;
@@ -43,12 +43,15 @@ body {
 			top: 0px;
 			vertical-align: middle;
 		}
-		span {
+		span:nth-child(2) {
 			line-height: 20px;
 			vertical-align: middle;
 		}
 		&.selected, &:hover, &:active {
 			color: #fff !important;
+			span:nth-child(1) {
+				color: #fff;
+			}
 		}
 		&.nav-home {
 			&.selected, &:hover, &:active {
