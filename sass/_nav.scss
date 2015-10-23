@@ -1,11 +1,28 @@
+$margin-top-bottom: 20px;
 .main-nav {
   background-color: #000;
+  margin-bottom: 0;
+  border: none;
   a {
   	color: #fff;
   }
 }
+.nav-i {
+	color: #fff;
+	font-size: 30px;
+}
+.navbar-toggle {
+	padding: 6px;
+	margin-top: $margin-top-bottom;
+	margin-bottom: $margin-top-bottom;
+}
 nav a {
 	cursor: pointer;
+}
+.navbar-fixed-top .navbar-collapse {
+	max-height: 380px;
+	border: none;
+	@include dragShadow('none');
 }
 nav.navbar-collapse {
 	.navbar-nav >li:not(:last-child) {
@@ -15,7 +32,11 @@ nav.navbar-collapse {
 		}
 	}
 	.navbar-nav >li > a {
-		margin: 17px 0;
+		position: relative;
+		top: 3px;
+		margin: 0;
+		margin-top: $margin-top-bottom;
+		margin-bottom: $margin-top-bottom;
 		padding: 0 5px 0 4px;
 		//border-radius: 0 10px;
 		background-color: initial !important;
@@ -25,8 +46,8 @@ nav.navbar-collapse {
 		//text-transform: uppercase;
 
 		&.selected, &:hover, &:active {
-			i { 
-				color: #fff;//rgba(255,255,255,0.5); 
+			i {
+				color: #fff;//rgba(255,255,255,0.5);
 			}
 		}
 
@@ -35,7 +56,7 @@ nav.navbar-collapse {
 		}
 		span:nth-child(1) {
 			display:block;
-			margin-bottom: 2px;
+			margin-bottom: 4px;
 			font-size: 13px;
 			line-height: 12px;
 			position: relative;
@@ -58,13 +79,21 @@ nav.navbar-collapse {
 		}
 	}
 }
+.navbar-header {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
 .navbar-brand {
 	height: 100%;
+	margin-left: 0 !important;
+	margin-top: $margin-top-bottom;
+	margin-bottom: $margin-top-bottom;
 }
 header {
 	margin-bottom: 0;
+	> .container {
+	}
 }
-
 header nav a[href] {
 	//background-image: url("../img/pattern_small.png");
 }
@@ -72,11 +101,14 @@ ul.nav.navbar-nav {
 	position:relative;
 }
 .navbar-brand {
+	// padding-top: 25px;
+	// padding-bottom: 25px;
 	height: 100%;
+	padding:0;
 	.text {
 		.stacked {
 			display: inline-block;
-			white-space: nowrap;	
+			white-space: nowrap;
 		}
 		.top {
 			display:block;
@@ -117,7 +149,7 @@ ul.nav.navbar-nav {
 			left: -4px;
 			letter-spacing: -1px;
 			text-transform: lowercase;
-			
+
 		}
 	}
 }
@@ -147,10 +179,7 @@ ul.nav.navbar-nav {
 	}
 }
 .nav-teaching {
-	span:nth-child(1) {
-		color: $brown;
-		font-size: 16px !important;
-	}
+	span:nth-child(1) { color: $brown; }
 	&.selected, &:hover, &:active {
 		color: $brown !important;
 	}
@@ -161,7 +190,6 @@ ul.nav.navbar-nav {
 		color: $blue !important;
 	}
 }
-
 nav li.active {
 	span:nth-child(1) {
 		//color: #fff;

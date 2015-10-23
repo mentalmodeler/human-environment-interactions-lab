@@ -45,7 +45,7 @@ app.updatedSizeAndPosition = function() {
         var linksWidth = $navlinks.outerWidth(true);
         brandWidth = navWidth - linksWidth;
     }
-    $('a.navbar-brand').css('max-width', brandWidth );
+    //$('a.navbar-brand').css('max-width', brandWidth );
 };
 
 app.getSectionFromScrollPosition = function(){
@@ -64,7 +64,7 @@ app.getSectionFromScrollPosition = function(){
     }
     app.log('                    after, fixedSection:',fixedSection);
     if ( fixedSection !== '' ) {
-      this.setActiveLink( fixedSection, 'getSectionFromScrollPosition' );  
+      this.setActiveLink( fixedSection, 'getSectionFromScrollPosition' );
     }
     return fixedSection;
 };
@@ -107,33 +107,38 @@ app.initScrollSpy = function() {
     var $body = $( 'body' );
     $body.attr( { 'data-spy': 'scroll', 'data-target': navSelector } );
     $body.scrollspy( { target: navSelector, offset: app.bodyPaddingTop} );
-    
+
     $(navSelector).on('activate.bs.scrollspy', function ( e ) {
         var sectionHash = $( e.target ).find( 'a' ).attr( 'href' )
-        app.log('activate.bs.scrollspy, sectionHash:',sectionHash );
+        //console.log('activate.bs.scrollspy, sectionHash:',sectionHash );
         app.onSectionChange( sectionHash, 'activate.bs.scrollspy' );
     });
 };
 
 app.onSectionChange = function ( hash, calledFrom ) { // $li ) {
-    var top = this.$content.find(hash).offset().top;
-    var headerHeight = this.$header.height() - 1;
+    var $elem = this.$content.find(hash);
+    var top = $elem.offset().top;
+    var headerHeight = this.$header.height();// - 1;
     var scrollTop = top - headerHeight;
+    var boundingRectTop = $elem[0].getBoundingClientRect().top;
     var section = hash.substring( 1 );
     app.setHash( hash );
     app.log('onSectionChange > section:',section,', calledFrom:',calledFrom,', top:',top,', headerHeight:',headerHeight,', scrollTop:',scrollTop);
     // update header
-    app.$stickyHeader.removeClass().addClass( section );
-    app.$stickyHeader.find('.container').hide();
-    app.$stickyHeader.find('.container.' + section ).show();
-    var zIndex = (app.sections.indexOf( hash ) + 1) * 10;
-    app.$stickyHeaderSectionHeaderBg.css('z-index', zIndex );
+    // this check keeps the header from switching on the last section if it isnt all the way to the top
+    if ( boundingRectTop < headerHeight ) {
+        app.$stickyHeader.removeClass().addClass( section );
+        app.$stickyHeader.find('.container').hide();
+        app.$stickyHeader.find('.container.' + section ).show();
+        var zIndex = (app.sections.indexOf( hash ) + 1) * 10;
+        app.$stickyHeaderSectionHeaderBg.css('z-index', zIndex );
+    }
 };
 
 app.setInitialSection = function() {
     var sectionHash = app.getSectionFromHash();
     app.log('app.setInitialSection, sectionHash:',sectionHash );
-    app.scrollToSection( sectionHash, true );    
+    app.scrollToSection( sectionHash, true );
 };
 
 app.getSectionFromHash = function() {
@@ -146,7 +151,7 @@ app.getSectionFromHash = function() {
     return sectionHash;
 };
 app.onWindowResize = _.debounce( function() {
-    app.updatedSizeAndPosition    
+    app.updatedSizeAndPosition();
     var section = app.getSectionFromScrollPosition();
     if ( section !== '') {
         app.onSectionChange( section, 'window.resize' );
@@ -167,7 +172,7 @@ $( document ).ready( function() {
     app.$navlinks = $('header nav a[href]')
     app.$stickyHeader = $('#stickySectionHeader');
     app.$stickyHeaderSectionHeaderBg = app.$stickyHeader.find('.section-header-bg');
-    
+
     // init scroll to section on click
     app.$navlinks.click(function(e) {
         e.stopImmediatePropagation();
@@ -175,16 +180,16 @@ $( document ).ready( function() {
         // collapses dropdown menu for width < 768px
         $('nav.navbar-collapse').removeClass('in');
         return app.scrollToSection( $(this).attr('href') );
-    });    
+    });
     // add hash change listener
     window.onhashchange = function() {
         app.scrollToSection( app.getSectionFromHash(), true );
     };
     // add resize listening
     $(window).resize( app.onWindowResize );
-    
+
     // initial call
-    app.updatedSizeAndPosition()
+    app.updatedSizeAndPosition();
     app.initScrollSpy();
     app.timeoutId = window.setTimeout( app.setInitialSection, 250);
 });
