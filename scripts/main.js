@@ -110,7 +110,7 @@ app.initScrollSpy = function() {
 
     $(navSelector).on('activate.bs.scrollspy', function ( e ) {
         var sectionHash = $( e.target ).find( 'a' ).attr( 'href' )
-        //console.log('activate.bs.scrollspy, sectionHash:',sectionHash );
+        console.log('activate.bs.scrollspy, sectionHash:',sectionHash );
         app.onSectionChange( sectionHash, 'activate.bs.scrollspy' );
     });
 };
@@ -124,16 +124,24 @@ app.onSectionChange = function ( hash, calledFrom ) { // $li ) {
     var section = hash.substring( 1 );
     app.setHash( hash );
     app.log('onSectionChange > section:',section,', calledFrom:',calledFrom,', top:',top,', headerHeight:',headerHeight,', scrollTop:',scrollTop);
+    console.log('onSectionChange > section:',section,', boundingRectTop:',boundingRectTop,', headerHeight:',headerHeight);
     // update header
     // this check keeps the header from switching on the last section if it isnt all the way to the top
-    if ( boundingRectTop < headerHeight ) {
-        app.$stickyHeader.removeClass().addClass( section );
-        app.$stickyHeader.find('.container').hide();
-        app.$stickyHeader.find('.container.' + section ).show();
-        var zIndex = (app.sections.indexOf( hash ) + 1) * 10;
-        app.$stickyHeaderSectionHeaderBg.css('z-index', zIndex );
+    if ( boundingRectTop <= headerHeight ) {
+        app.updateHeader();    
     }
 };
+
+app.updateHeader = function() {
+    var hash = app.getSectionFromHash();
+    var section = hash.substring( 1 )
+    console.log('---- updateHeader, section:',section,', hash:',hash);
+    app.$stickyHeader.removeClass().addClass( section );
+    app.$stickyHeader.find('.container').hide();
+    app.$stickyHeader.find('.container.' + section ).show();
+    var zIndex = (app.sections.indexOf( hash ) + 1) * 10;
+    app.$stickyHeaderSectionHeaderBg.css('z-index', zIndex );
+}
 
 app.setInitialSection = function() {
     var sectionHash = app.getSectionFromHash();
@@ -165,7 +173,14 @@ app.log = function() {
 $( document ).ready( function() {
     // set app variables
     app.doLog = false;
-    app.sections = [ '#home', '#people', '#publications', '#research', '#teaching', '#software' ];
+    app.sections = [
+        '#home',
+        '#people',
+        '#publications',
+        '#research',
+    //    '#teaching',
+        '#software'
+    ];
     app.$content = $('#content');
     app.$root = $('body');
     app.$header = $('header');
