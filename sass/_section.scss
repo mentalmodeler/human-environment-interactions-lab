@@ -122,14 +122,10 @@ img.feature {
     .section-header-bg  { background-color: $yellow; }
     z-index:39;
 }
-.teaching {
-    .section-header-bg  { background-color: $brown; }
-    z-index:49;
-}
 .software {
     .section-header-bg  { background-color: $blue; }
     a { color: $blue; }
-    z-index:59;
+    z-index:49;
 }
 
 .green { color: $green !important; }

@@ -124,7 +124,7 @@ app.onSectionChange = function ( hash, calledFrom ) { // $li ) {
     var section = hash.substring( 1 );
     app.setHash( hash );
     app.log('onSectionChange > section:',section,', calledFrom:',calledFrom,', top:',top,', headerHeight:',headerHeight,', scrollTop:',scrollTop);
-    console.log('onSectionChange > section:',section,', boundingRectTop:',boundingRectTop,', headerHeight:',headerHeight);
+    console.log('onSectionChange > hash:',hash,', $elem:',$elem[0],', section:',section,', boundingRectTop:',boundingRectTop,', headerHeight:',headerHeight);
     // update header
     // this check keeps the header from switching on the last section if it isnt all the way to the top
     if ( boundingRectTop <= headerHeight ) {

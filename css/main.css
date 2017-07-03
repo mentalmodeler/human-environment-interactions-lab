@@ -679,13 +679,8 @@ img.feature {
   .research .section-header-bg {
     background-color: #CCCC27; }
 
-.teaching {
-  z-index: 49; }
-  .teaching .section-header-bg {
-    background-color: #A66F03; }
-
 .software {
-  z-index: 59; }
+  z-index: 49; }
   .software .section-header-bg {
     background-color: #3498DB; }
   .software a {
